@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Online Resume | NB</title>
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/jQuery.js"></script>
+
+    <script src="js/helper.js"></script>
+
+    <!-- code for map widget -->
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAoaWsCSwONfQzqmboCKjq1umUNQK386K4"></script>
+
+    <!-- code for twitter widget -->
+    <script>
+        window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
+
+    <meta name="viewport" content="width=device-width">
+
+    <!-- code to import google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600|Merriweather:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container">
+        <div id="main">
+            <div id="header" class="center-content clear-fix">
+                <ul id="topContacts" class="flex-box"></ul>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="projects">
+                <h2>Projects</h2>
+            </div>
+            <div id="workExperience" class="gray">
+                <h2>Work Experience</h2>
+            </div>
+            <div id="education" class="gray">
+                <h2>College</h2>
+            </div>
+            <div id="onlineClasses" class="gray">
+                <h2>Online Classes</h2>
+            </div>
+            <div class="interactive">
+                <div id="mapDiv">
+                    <h2>Where I've Lived and Worked</h2>
+                </div>
+                <div id="twitterDiv">
+                    <h2>Get to Know Me</h2>
+                </div>
+            </div>
+            <div id="lets-connect" class="dark-gray">
+                <h2 class="orange center-text">Let's Connect</h2>
+                <ul id="footerContacts" class="flex-box">
+                </ul>
+            </div>
+        </div>
+
+        <script src="js/resumeBuilder.js"></script>
+
+        <script>
+            if (document.getElementsByClassName('flex-item').length === 0) {
+                document.getElementById('topContacts').style.display = 'none';
+            }
+            if (document.getElementsByTagName('h1').length === 0) {
+                document.getElementById('header').style.display = 'none';
+            }
+            if (document.getElementsByClassName('work-entry').length === 0) {
+                document.getElementById('workExperience').style.display = 'none';
+            }
+            if (document.getElementsByClassName('project-entry').length === 0) {
+                document.getElementById('projects').style.display = 'none';
+            }
+            if (document.getElementsByClassName('education-entry').length === 0) {
+                document.getElementById('education').style.display = 'none';
+            }
+            if (document.getElementsByClassName('class-entry').length === 0) {
+                document.getElementById('onlineClasses').style.display = 'none';
+            }
+            if (document.getElementsByClassName('flex-item').length === 0) {
+                document.getElementById('lets-connect').style.display = 'none';
+            }
+            if (document.getElementById('map') === null) {
+                document.getElementById('mapDiv').style.display = 'none';
+            }
+            if (document.getElementById('twitter') === null) {
+                document.getElementById('twitterDiv').style.display = 'none';
+            }
+        </script>
+    </div>
+</body>
+
+</html>
